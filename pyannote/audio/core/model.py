@@ -789,6 +789,7 @@ class Model(pl.LightningModule):
                 use_auth_token=use_auth_token,
                 local_files_only=local_files_only,
             )
+            print("path_for_pl 792", path_for_pl)
 
             # HACK Huggingface download counters rely on config.yaml
             # HACK Therefore we download config.yaml even though we
