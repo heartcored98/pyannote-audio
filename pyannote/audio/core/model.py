@@ -786,6 +786,7 @@ class Model(pl.LightningModule):
                 library_version=__version__,
                 cache_dir=cache_dir,
                 use_auth_token=use_auth_token,
+                local_files_only=True,
             )
 
             # HACK Huggingface download counters rely on config.yaml
@@ -802,6 +803,7 @@ class Model(pl.LightningModule):
                     library_version=__version__,
                     cache_dir=cache_dir,
                     use_auth_token=use_auth_token,
+                    local_files_only=True,
                 )
             except Exception:
                 pass
