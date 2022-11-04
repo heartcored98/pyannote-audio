@@ -709,6 +709,7 @@ class Model(pl.LightningModule):
         strict: bool = True,
         use_auth_token: Union[Text, None] = None,
         cache_dir: Union[Path, Text] = CACHE_DIR,
+        local_files_only: bool = False,
         **kwargs,
     ) -> "Model":
         """Load pretrained model
@@ -786,7 +787,7 @@ class Model(pl.LightningModule):
                 library_version=__version__,
                 cache_dir=cache_dir,
                 use_auth_token=use_auth_token,
-                local_files_only=True,
+                local_files_only=local_files_only,
             )
 
             # HACK Huggingface download counters rely on config.yaml
@@ -803,7 +804,7 @@ class Model(pl.LightningModule):
                     library_version=__version__,
                     cache_dir=cache_dir,
                     use_auth_token=use_auth_token,
-                    local_files_only=True,
+                    local_files_only=local_files_only,
                 )
             except Exception:
                 pass
